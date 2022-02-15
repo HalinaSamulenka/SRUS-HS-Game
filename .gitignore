@@ -1,3 +1,7 @@
+profiles_setting.xml
+.idea/**/profiles_settings.xml
+.idea/**
+
 ### NotepadPP template
 # Notepad++ backups #
 *.bak
@@ -76,6 +80,7 @@ Backup of *.doc*
 
 # CMake
 cmake-build-*/
+kalandia17
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
