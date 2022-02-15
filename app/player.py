@@ -9,38 +9,46 @@
 # ----------------------------------------------------------------------
 
 class Player:
-    # constructor
-    def __init__(self, uid, name):
-        self._uid = uid
+    """
+    Player class
+    """
+
+    def __init__(self, id, name):
+        """
+        Player constructor
+        :param id: string
+        :param name: string
+        """
+        self._id = id
         self._name = name
 
-    # getting the values
-    def getter1(self):
-        return self._uid
 
-    def getter2(self):
+    @property
+    def uid(self):
+        """
+        User ID property
+        :return: string
+        """
+        return self._id
+
+    @property
+    def name(self):
+        """
+        Player`s name property
+        :return: string
+        """
         return self._name
 
-    # setting the values
-    def setter1(self, uid):
-        self._uid = uid
 
-    def setter2(self, name):
-        self._name = name
-
-    # deleting the values
-    def deleter1(self):
-        del self._uid
-
-    def deleter2(self):
-        del self._name
-
-    # create a properties
-    uid = property(getter1, setter1, deleter1)
-    name = property(getter2, setter2, deleter2)
 
     def __str__(self):
-        return f'Player({self.uid}, {self.name})'
+        """
+        String magic staticmethod
+        Constructs a human readable form of the instance
+        :return: string
+        """
+
+        return f"{self.name} ({self.uid})"
 
 
 
