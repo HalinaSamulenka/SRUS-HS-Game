@@ -39,8 +39,6 @@ class Player:
         """
         return self._name
 
-
-
     def __str__(self):
         """
         String magic staticmethod
