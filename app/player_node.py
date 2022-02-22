@@ -7,7 +7,9 @@
 # ----------------------------------------------------------------------
 from app.player import Player
 
+
 class PlayerNode:
+
     """
     add an initialiser method
     """
@@ -70,6 +72,10 @@ class PlayerNode:
         return self.player.uid
 
     def __str__(self):
+        """
+        Constructs the node object
+        :return: string
+        """
         return f"{self.player}"
 
 

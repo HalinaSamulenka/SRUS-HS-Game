@@ -8,12 +8,13 @@
 import unittest
 from app.player import Player
 
+
 class MyPlayerTestCase(unittest.TestCase):
 
     def setUp(self):
         #Function that runs before each test to set up
         # pre-requisites
-        self.player = Player("1","Fred")
+        self.player = Player("1", "Fred")
 
     def test_create_player(self):
         #player = Player("1","Fred")
