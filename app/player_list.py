@@ -39,3 +39,32 @@ class PlayerList:
             self.tail_node = new_node
             new_node.prev_node = None
         return new_node
+
+    def insert_last(self, player):
+        """
+        insert item at the tail of the list
+        :param player:
+        :return:
+        """
+        new_node = PlayerNode(player)  # Create new node
+        new_node.prev_node = self.tail_node
+        if self.tail_node is None:
+            """
+            If the list is empty, make new node both head and tail
+            """
+            self.head_node = new_node
+            self.tail_node = new_node
+            new_node.next_node = None
+        else:
+            """
+            If the list is not empty, change pointers accordingly,
+            new node becomes the new tail
+            """
+            self.tail_node.next_node = new_node
+            new_node.next_node = None
+            self.tail_node = new_node
+        return new_node
+
+
+
+
