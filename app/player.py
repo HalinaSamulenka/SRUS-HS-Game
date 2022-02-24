@@ -1,6 +1,4 @@
-# Title of Application/Code/Class
-#
-# Short Description if required (delete if not)
+# Create Player class
 #
 # Filename: player.py
 # Project: SRUS-HS-Games

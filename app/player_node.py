@@ -11,7 +11,7 @@ from app.player import Player
 class PlayerNode:
 
     """
-    add an initialiser method
+    create an initialiser method
     """
     def __init__(self, player):
         self.player = player

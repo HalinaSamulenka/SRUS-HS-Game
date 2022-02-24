@@ -37,8 +37,7 @@ class MyPlayerTestCase(unittest.TestCase):
        self.assertEqual(user_id, "1")
 
 
-    def test_something(self):
-        self.assertEqual(True, False)
+
 
 if __name__== '__name__':
     unittest.main()
