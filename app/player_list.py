@@ -65,6 +65,38 @@ class PlayerList:
             self.tail_node = new_node
         return new_node
 
+    def delete_first(self):
+        """
+        Delete an item from the head of the list
+        :return:
+        """
+        if self.head_node is None:
+            print("The list has no element to delete")
+            return
+        if self.head_node.next_node is None:
+            self.head_node = None
+            return
+        self.head_node = self.head_node.next_node
+        self.head_node.prev_node = None
+
+    def delete_last(self):
+        """
+        Delete an item from the tail of the list
+        :return:
+        """
+        if self.tail_node is None:
+            print("The list has no element to delete")
+            return
+        if self.tail_node.prev_node is None:
+            self.tail_node = None
+            return
+        current = self.tail_node
+        current.prev_node.next_node = None
+        self.tail_node = current.prev_node
+        current.prev_node = None
+
+
+
 
 
 
