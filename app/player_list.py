@@ -95,6 +95,31 @@ class PlayerList:
         self.tail_node = current.prev_node
         current.prev_node = None
 
+    def delete_item_based_on_key(self, item):
+        """
+        Delete an item from the linked list based on its key
+        :param item:
+        :return:
+        """
+        current = self.head_node
+        prev_node = None
+        found = False
+        while not found:
+            if current.get_player().uid == item:
+                found = True
+            else:
+                prev_node = current
+                current = current.get_next_node()
+        if prev_node is None:
+            self.head_node = current.get_next_node()
+        else:
+            prev_node.set_next(current.get_next_node())
+
+
+
+
+
+
 
 
 
