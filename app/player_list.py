@@ -12,6 +12,7 @@ class PlayerList:
     """
     PlayerList class
     """
+
     def __init__(self):
         self.head_node = None
         self.tail_node = None
@@ -114,6 +115,30 @@ class PlayerList:
             self.head_node = current.get_next_node()
         else:
             prev_node.set_next(current.get_next_node())
+
+    def display_list(self, forward=True):
+        """
+        Display the list from head to tail
+        :param forward:
+        :return:
+        """
+        if self.head_node is None:
+            print("The list is empty")
+            return
+        elif forward:
+            current = self.head_node
+            while current:
+                print(" {}".format(current.get_player()))
+                current = current.get_next_node()
+            return
+        elif forward == False:
+            while self.tail_node:
+                print(" {}".format(self.tail_node.get_player()))
+                self.tail_node = self.tail_node.prev_node
+            return
+
+
+
 
 
 
