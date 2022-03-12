@@ -5,6 +5,9 @@
 # Author: Halina Samulenka <20031748@tafe.wa.edu.au>
 # Date Created: 11/2/22
 # ----------------------------------------------------------------------
+import argon2
+from argon2 import PasswordHasher
+
 
 class Player:
     """
@@ -17,9 +20,10 @@ class Player:
         :param id: string
         :param name: string
         """
+
         self._id = id
         self._name = name
-
+        self._plaintext_password = None
 
     @property
     def uid(self):
@@ -43,8 +47,35 @@ class Player:
         Constructs a human readable form of the instance
         :return: string
         """
-
         return f"{self.name} ({self.uid})"
+
+    def add_password(self, plaintext_password):
+        """
+        Add password to Player class
+        :param  plaintext_password
+        :return:
+        """
+        ph = PasswordHasher()
+        self._plaintext_password = ph.hash(
+            plaintext_password)
+
+    def verify_password(self, plaintext_password):
+        """
+        Verify password to the Player class
+        :param plaintext_password:
+        :return:
+        """
+        try:
+            return PasswordHasher().verify(self._plaintext_password,
+                                           plaintext_password)
+        except Exception:
+            return False
+
+
+
+
+
+
 
 
 

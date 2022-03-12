@@ -12,9 +12,10 @@ from app.player import Player
 class MyPlayerTestCase(unittest.TestCase):
 
     def setUp(self):
-        #Function that runs before each test to set up
+        # Function that runs before each test to set up
         # pre-requisites
         self.player = Player("1", "Fred")
+
 
     def test_create_player(self):
         #player = Player("1","Fred")
@@ -35,6 +36,26 @@ class MyPlayerTestCase(unittest.TestCase):
        user_id = self.player.uid
        self.assertIsInstance(user_id, str)
        self.assertEqual(user_id, "1")
+
+    def test_add_password(self):
+        """
+        test method add_password
+        """
+        self.player.add_password("test_password")
+        assert self.player.verify_password("test_password")
+
+    def test_verify_password(self):
+        """
+        test verify_password_method
+        :return:
+        """
+        self.player.add_password("test_verify_password")
+        assert not self.player.verify_password("verify_password")
+
+
+
+
+
 
 
 
