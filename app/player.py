@@ -24,6 +24,7 @@ class Player:
         self._id = id
         self._name = name
         self._plaintext_password = None
+        self._score = 1
 
     @property
     def uid(self):
@@ -70,6 +71,64 @@ class Player:
                                            plaintext_password)
         except Exception:
             return False
+
+    def get_score(self):
+        """
+        implement getter(properties)
+        :return: score
+        """
+        return self.score
+
+    def set_score(self, new_score):
+        """
+        implement setter for this class
+        :param new_score:
+        :return:
+        """
+        self.score = new_score
+
+    def __eq__(self, other):
+        """
+        implement the __eq__ method in the Player class
+        :param other:
+        :return:
+        """
+        if isinstance(other, Player):
+            return self.score == other.score
+        return False
+
+    def __ge__(self, other):
+        """
+        implement larger than or equals method
+        :param other:
+        :return:
+        """
+        return self.score >= other
+
+    @staticmethod
+    def insertion_sort(player):
+        """
+        implementation insertion sort
+        :param player:
+        :return: list player
+        """
+        for i in range(1, len(player)):
+            # Set key:
+            key = player[i]
+            j = i - 1
+            while j >= 0 and player[j].score < key.score:
+                # Swap:
+                player[j + 1] = player[j]
+                player[j] = key
+                # Decrement 'j':rentposition - 1
+                j -= 1
+
+
+
+
+
+
+
 
 
 
