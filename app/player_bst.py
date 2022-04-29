@@ -48,3 +48,22 @@ class PlayerBST:
                     if current is None:
                         parent.right_node = new_node
                         return
+
+    def search(self, name):
+        """
+        search player in BST
+        :param name of player
+        :return: player object
+        """
+        current = self._root
+        # loop while root not match name
+        while current.player.name != name:
+            # if name is less root`s name search left
+            if name < current.player.name:
+                current = current.left_node
+            else:
+                # if name is greater root`s name search left
+                current = current.right_node
+            if current is None:
+                return None
+        return current
