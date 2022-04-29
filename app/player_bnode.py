@@ -41,7 +41,6 @@ class PlayerBNode:
         """
         implement setter for this class
         :param new_player:
-        :return:
         """
         self.player = new_player
 
@@ -49,7 +48,6 @@ class PlayerBNode:
         """
         implement setter for this class
         :param new_left:
-        :return:
         """
         self.left_node = new_left
 
@@ -57,6 +55,5 @@ class PlayerBNode:
         """
         implement setter for this class
         :param new_right:
-        :return:
         """
         self.right_node = new_right

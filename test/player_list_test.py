@@ -8,13 +8,12 @@
 import unittest
 from app.player import Player
 from app.player_list import PlayerList
-from app.player_node import PlayerNode
 
 
 class MyPlayerListTestCase(unittest.TestCase):
 
     def setUp(self):
-        #Function that runs before each test to set up
+        # Function that runs before each test to set up
         # pre-requisites
         self.linked_list = PlayerList()
 
