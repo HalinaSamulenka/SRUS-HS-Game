@@ -57,3 +57,18 @@ class PlayerBNode:
         :param new_right:
         """
         self.right_node = new_right
+
+    @property
+    def key(self):
+        """
+        User key property
+        :return: string
+        """
+        return self.player.name
+
+    def __str__(self):
+        """
+        Constructs the node object
+        :return: string
+        """
+        return f"{self.player.name}"
